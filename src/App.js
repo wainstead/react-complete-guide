@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -56,11 +55,7 @@ class App extends Component {
       font: 'inherit',
       border: '1x solid blue',
       padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     };
     let persons = null;
 
@@ -79,10 +74,6 @@ class App extends Component {
         </div>
       );
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'navajowhite',
-        color: 'black'
-      }
     }
 
     const classes = [];
@@ -93,7 +84,6 @@ class App extends Component {
       classes.push('bold');
     }
     return (
-      <StyleRoot>
       <div className="App">
         <h2>Hi, I'm a React app!</h2>
         <hr />
@@ -105,11 +95,9 @@ class App extends Component {
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
-      </StyleRoot>
       //React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hello sailor!!!'))
     );
   }
 }
 
-// Radium is a 'higher order component'
-export default Radium(App);
+export default App;
